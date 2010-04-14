@@ -1,0 +1,7 @@
+// RXVisitor.pch
+// Created by Rob Rix on 2010-04-14
+// Copyright 2010 Monochrome Industries
+
+#ifdef __OBJC__
+	#import <Foundation/Foundation.h>
+#endif

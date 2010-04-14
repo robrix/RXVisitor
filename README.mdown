@@ -1,0 +1,12 @@
+#`RXVisitor`
+
+This is a simple, convenient implementation of visitor pattern.
+
+1.	Conform your collection objects (usually tree nodes) to `RXVisitable`.
+2.	Subclass `RXVisitor`, implement `-nameForObject:`, and implement `-leave<Name>:`/`-leave<Name>:withVisitedChildren:` and optionally `-visit<Name>:` for each type of object you want to visit.
+	
+	Note that this isn’t necessarily the same as each _class_ of object; you could visit a homogeneous HTML tree by having `-nameForObject:` return the tag name, for example.
+
+As an alternative to step 2 above, any class conforming to the `RXVisitor` protocol will work just fine as a visitor; the class just provides you with a head start.
+
+The Xcode project compiles a static library, but you can just include the RXVisitor.[hm] files in your project. I usually check this repo out as a submodule and include the files directly in the master project’s targets.
