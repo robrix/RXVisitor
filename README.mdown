@@ -1,11 +1,13 @@
 #`RXVisitor`
 
-This is a simple, convenient implementation of visitor pattern.
+A simple, convenient implementation of visitor pattern suitable for subclassing and customizing to your needs.
 
 1.	Conform your collection objects (usually tree nodes) to `RXVisitable`.
 2.	Subclass `RXVisitor`, implement `-nameForObject:`, and implement `-leave<Name>:`/`-leave<Name>:withVisitedChildren:` and optionally `-visit<Name>:` for each type of object you want to visit.
 	
 	Note that this isn’t necessarily the same as each _class_ of object; you could visit a homogeneous HTML tree by having `-nameForObject:` return the tag name, for example.
+	
+	Your `-leave…` methods should return an object representing the state of the visited object to be passed into the visitor method for the parent node, or the original caller of -acceptVisitor:. `RXVisitorTests` provides a good example of this.
 
 As an alternative to step 2 above, any class conforming to the `RXVisitor` protocol will work just fine as a visitor; the class just provides you with a head start.
 
