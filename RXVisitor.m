@@ -32,7 +32,7 @@
 		[self performSelector: selector withObject: object];
 }
 
--(id)leaveObject:(id<RXVisitable>)object withVisitedChildren:(NSArray *)children {
+-(id)leaveObject:(id<RXVisitable>)object withVisitedChildren:(id)children {
 	SEL selector = [self selectorForLeavingObject: object];
 	id result = nil;
 	if(selector && [self respondsToSelector: selector])

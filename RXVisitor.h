@@ -16,7 +16,7 @@
 @protocol RXVisitor <NSObject>
 
 -(void)visitObject:(id<RXVisitable>)object;
--(id)leaveObject:(id<RXVisitable>)object withVisitedChildren:(NSArray *)children;
+-(id)leaveObject:(id<RXVisitable>)object withVisitedChildren:(id)children;
 
 @end
 
